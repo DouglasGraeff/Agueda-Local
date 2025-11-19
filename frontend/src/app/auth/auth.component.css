@@ -1,0 +1,2 @@
+/* Minimal Tailwind-friendly styles. Use Tailwind classes in templates where possible. */
+:host { display: block; }

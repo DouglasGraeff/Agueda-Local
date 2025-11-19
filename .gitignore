@@ -398,6 +398,20 @@ FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
 .vscode/*
+
+# Project-specific ignores to avoid committing local caches, logs and vendor
+# Backend logs and vendor
+/backend/storage/logs/
+/backend/vendor/
+
+# Frontend caches and build artifacts
+/frontend/.angular/
+/frontend/node_modules/
+/frontend/dist/
+
+# Other generated files
+/dist/
+/node_modules/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
