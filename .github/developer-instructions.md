@@ -36,7 +36,7 @@ psql -U postgres -c "CREATE DATABASE agueda_local;"
 3. Rodar migrations e seeders (se houver):
 
 ```powershell
-php artisan migrate --seed
+php artisan migrate
 ```
 
 4. Iniciar o servidor local do Laravel:
