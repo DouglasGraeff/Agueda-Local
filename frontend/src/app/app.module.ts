@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LandingComponent } from './pages/landing.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    AuthComponent
+    AuthComponent,
+    LandingComponent
   ],
   providers: []
 })

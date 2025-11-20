@@ -1,0 +1,105 @@
+
+<section class="hero" aria-label="Bem-vindo ao Águeda Local">
+  <div class="hero-content">
+    <img src="assets/logo.svg" alt="Águeda Local Logo" class="logo" />
+    <h1>Águeda Local</h1>
+    <p class="hero-subtitle">O marketplace de confiança onde a comunidade local se encontra para comprar e vender produtos de qualidade</p>
+    
+    <div class="hero-cta">
+      <button class="btn btn-primary" aria-label="Explorar produtos">Explorar Produtos</button>
+      <button class="btn btn-secondary" aria-label="Registar como novo utilizador">Registar</button>
+    </div>
+  </div>
+  
+  <div class="hero-decoration">
+    <span class="umbrella">☂️</span>
+    <span class="umbrella">☂️</span>
+    <span class="umbrella">☂️</span>
+    <span class="umbrella">☂️</span>
+  </div>
+</section>
+
+<section class="why-choose" aria-label="Razões para escolher Águeda Local">
+  <div class="container">
+    <h2>Porquê Águeda Local?</h2>
+    
+    <div class="why-grid">
+      <article *ngFor="let item of whyChooseItems; let i = index" class="why-card" [attr.data-icon]="item.icon">
+        <div class="icon-circle" [style.background-color]="['#EF6B6B', '#38BDF8', '#10B981', '#EC4899'][i]">
+          <span class="icon" [attr.aria-hidden]="true">
+            {{ item.icon === 'Shopping' ? '🛍️' : item.icon === 'Truck' ? '🚚' : item.icon === 'Leaf' ? '🌿' : '⭐' }}
+          </span>
+        </div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works" aria-label="Como funciona o Águeda Local">
+  <div class="container">
+    <h2>Como Funciona</h2>
+    
+    <div class="how-grid">
+      <article *ngFor="let step of howItWorks; let i = index" class="how-card">
+        <div class="step-number">{{ step.number }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="categories" aria-label="Categorias populares">
+  <div class="container">
+    <h2>Categorias Populares</h2>
+    
+    <div class="categories-grid">
+      <button 
+        *ngFor="let category of popularCategories" 
+        class="category-chip"
+        [attr.aria-label]="'Categoria ' + category.name"
+        [style.border-color]="category.color">
+        <span class="category-icon">{{ category.icon }}</span>
+        <span class="category-name">{{ category.name }}</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" aria-label="Chamada para ação de registo">
+  <div class="cta-content">
+    <h2>Pronto para começar?</h2>
+    <p>Junte-se à comunidade Águeda Local e descubra produtos únicos</p>
+    
+    <div class="cta-buttons">
+      <button class="btn btn-primary" aria-label="Criar conta">Criar Conta</button>
+      <button class="btn btn-secondary" aria-label="Saber mais">Saber Mais</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" aria-label="Rodapé do website">
+  <div class="container">
+    <div class="footer-grid">
+      <div *ngFor="let section of footerLinks" class="footer-column">
+        <h4>{{ section.title }}</h4>
+        <ul>
+          <li *ngFor="let link of section.links">
+            <a href="#" [attr.aria-label]="link">{{ link }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Águeda Local. Todos os direitos reservados.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+  </div>
+</footer>
