@@ -5,14 +5,14 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
-class CreateEcommerceTables extends Migration
+return new class extends Migration
 {
 
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('address_id');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->string('address_line1', 255);
             $table->string('address_line2', 255)->nullable();
             $table->string('city', 100);
@@ -21,7 +21,7 @@ class CreateEcommerceTables extends Migration
             $table->boolean('is_default_shipping')->default(false);
             $table->boolean('is_default_billing')->default(false);
 
-            $table->foreign('user_id')->references('user_id')->on('user_info')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('user_info')->onDelete('cascade');
         });
 
         Schema::table('addresses', function (Blueprint $table) {
@@ -43,13 +43,13 @@ class CreateEcommerceTables extends Migration
 
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('order_id');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->integer('shipping_address_id')->unsigned();
             $table->integer('billing_address_id')->unsigned();
             $table->timestampTz('created_at')->useCurrent();
             $table->decimal('total_amount', 10, 2);
 
-            $table->foreign('user_id')->references('user_id')->on('user_info')->onDelete('restrict');
+            $table->foreign('user_id')->references('id')->on('user_info')->onDelete('restrict');
             $table->foreign('shipping_address_id')->references('address_id')->on('addresses')->onDelete('restrict');
             $table->foreign('billing_address_id')->references('address_id')->on('addresses')->onDelete('restrict');
         });
@@ -121,10 +121,10 @@ class CreateEcommerceTables extends Migration
 
         Schema::create('wishlists', function (Blueprint $table) {
             $table->increments('wishlist_id');
-            $table->integer('user_id')->unsigned()->unique();
+            $table->unsignedBigInteger('user_id')->unique();
             $table->timestampTz('created_at')->useCurrent();
 
-            $table->foreign('user_id')->references('user_id')->on('user_info')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('user_info')->onDelete('cascade');
         });
 
         Schema::create('wishlist_items', function (Blueprint $table) {
@@ -157,4 +157,4 @@ class CreateEcommerceTables extends Migration
         Schema::dropIfExists('order_statuses');
         Schema::dropIfExists('addresses');
     }
-}
+};
