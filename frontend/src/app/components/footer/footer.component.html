@@ -1,0 +1,26 @@
+<footer class="footer" aria-label="Rodapé do website">
+  <div class="container">
+    <div class="footer-grid">
+      <div *ngFor="let section of footerLinks" class="footer-column">
+        <h4>{{ section.title }}</h4>
+        <ul>
+          <li *ngFor="let link of section.links">
+            <a [href]="link.startsWith('http') ? link : '#'" [attr.aria-label]="link">{{ link }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Águeda Local. Todos os direitos reservados.</p>
+      <div class="social-links">
+        <a *ngFor="let social of socialLinks" 
+           [href]="social.url" 
+           [attr.aria-label]="social.name"
+           class="social-link">
+          {{ social.icon }}
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

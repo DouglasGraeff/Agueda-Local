@@ -55,23 +55,4 @@ export class LandingComponent {
     { name: 'Beleza', icon: '💄', color: '#D946EF' },
     { name: 'Artesanato', icon: '🎨', color: '#F59E0B' }
   ];
-
-  footerLinks = [
-    {
-      title: 'Águeda Local',
-      links: ['Sobre Nós', 'Política de Privacidade', 'Termos de Serviço']
-    },
-    {
-      title: 'Links Rápidos',
-      links: ['Para Clientes', 'Para Vendedores', 'Para Empresas']
-    },
-    {
-      title: 'Suporte',
-      links: ['FAQ', 'Contacte-nos', 'Rastrear Encomenda']
-    },
-    {
-      title: 'Contacto',
-      links: ['Email: info@aguedaLocal.pt', 'Tel: +351 234 123 456', 'Morada: Águeda, Portugal']
-    }
-  ];
 }
