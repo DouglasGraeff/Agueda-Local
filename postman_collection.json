@@ -1,0 +1,287 @@
+{
+  "info": {
+    "_postman_id": "agueda-local-api-2025",
+    "name": "Agueda Local API",
+    "description": "Collection para testar API do Águeda Local - Backend Laravel",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        },
+        "description": "Verificar se a API está online"
+      }
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register - Consumidor",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.environment.set('token', jsonData.token);",
+                  "    pm.environment.set('user_uuid', jsonData.user.uuid);",
+                  "    pm.environment.set('user_id', jsonData.user.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"João Silva\", \"email\": \"joao@example.com\", \"phone\": \"+351 912 345 678\", \"password\": \"SecurePass123\", \"password_confirmation\": \"SecurePass123\", \"user_type_id\": 1}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "register"]
+            },
+            "description": "Registar novo utilizador como Consumidor"
+          }
+        },
+        {
+          "name": "Register - Produtor",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.environment.set('token', jsonData.token);",
+                  "    pm.environment.set('user_uuid', jsonData.user.uuid);",
+                  "    pm.environment.set('user_id', jsonData.user.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Maria Santos\", \"email\": \"maria@example.com\", \"phone\": \"+351 913 456 789\", \"password\": \"SecurePass123\", \"password_confirmation\": \"SecurePass123\", \"user_type_id\": 2}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "register"]
+            },
+            "description": "Registar novo utilizador como Produtor"
+          }
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.environment.set('token', jsonData.token);",
+                  "    pm.environment.set('user_uuid', jsonData.user.uuid);",
+                  "    pm.environment.set('user_id', jsonData.user.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"joao@example.com\", \"password\": \"SecurePass123\"}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            },
+            "description": "Fazer login com email e password"
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/auth/logout",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "logout"]
+            },
+            "description": "Terminar sessão (requer autenticação)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get My Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/users/me",
+              "host": ["{{base_url}}"],
+              "path": ["users", "me"]
+            },
+            "description": "Obter dados do perfil do utilizador autenticado"
+          }
+        },
+        {
+          "name": "Get User Profile (Public)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/{{user_uuid}}",
+              "host": ["{{base_url}}"],
+              "path": ["users", "{{user_uuid}}"]
+            },
+            "description": "Ver perfil público de um utilizador (sem autenticação)"
+          }
+        },
+        {
+          "name": "Update My Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"João Silva Atualizado\", \"email\": \"joao.novo@example.com\", \"phone\": \"+351 912 999 999\"}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users/{{user_uuid}}",
+              "host": ["{{base_url}}"],
+              "path": ["users", "{{user_uuid}}"]
+            },
+            "description": "Atualizar dados do perfil (nome, email, telefone)"
+          }
+        },
+        {
+          "name": "Update Password",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"current_password\": \"SecurePass123\", \"password\": \"NewSecurePass123\", \"password_confirmation\": \"NewSecurePass123\"}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users/{{user_uuid}}",
+              "host": ["{{base_url}}"],
+              "path": ["users", "{{user_uuid}}"]
+            },
+            "description": "Alterar a palavra-passe (requer password atual)"
+          }
+        },
+        {
+          "name": "Delete My Account",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/users/{{user_uuid}}",
+              "host": ["{{base_url}}"],
+              "path": ["users", "{{user_uuid}}"]
+            },
+            "description": "Eliminar a conta do utilizador (irreversível)"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000/api",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "user_uuid",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "user_id",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
