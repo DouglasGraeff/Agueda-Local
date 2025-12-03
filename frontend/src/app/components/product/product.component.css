@@ -1,0 +1,245 @@
+.page {
+  background: #f8f9fa;
+  padding: 48px 16px 96px;
+}
+
+.page-inner.product-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* bloco principal */
+
+.product-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .product-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.product-visual {
+  height: 500px;
+  border-radius: 16px;
+  background: linear-gradient(132deg, #95e1d3 0%, #5b9bd5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product-visual span {
+  font-size: 7rem;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.product-info header h1 {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 2rem;
+  color: #ff6b6b;
+  margin-bottom: 4px;
+}
+
+.product-info header .price-line {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.product-info header .stock-badge {
+  display: inline-flex;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #38c172;
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+/* descrição */
+
+.description h2 {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #495057;
+}
+
+.description p {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: #495057;
+}
+
+/* quantidade */
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quantity span {
+  font-weight: 500;
+  color: #495057;
+}
+
+.quantity .qty-control {
+  display: inline-flex;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+.quantity .qty-control button {
+  width: 36px;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.quantity .qty-control span {
+  padding: 6px 16px;
+  min-width: 36px;
+  text-align: center;
+}
+
+/* botão carrinho */
+
+.add-cart-btn {
+  border-radius: 999px;
+  padding: 16px 32px;
+  border: none;
+  background: #ffe66d;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+}
+
+/* destaque produtor */
+
+.producer-highlight {
+  margin-top: 8px;
+  padding: 24px 24px 20px;
+  border-radius: 16px;
+  background: #fff3cd;
+}
+
+.producer-highlight h3 {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 1.15rem;
+  color: #ff6b6b;
+  margin-bottom: 4px;
+}
+
+.producer-highlight p {
+  font-size: 0.95rem;
+  color: #495057;
+  margin-bottom: 12px;
+}
+
+.producer-highlight .producer-btn {
+  border-radius: 999px;
+  padding: 10px 20px;
+  background: #ffffff;
+  border: 2px solid #ff6b6b;
+  color: #ff6b6b;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* relacionados */
+
+.related h2 {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 1.3rem;
+  color: #495057;
+  margin-bottom: 24px;
+}
+
+.related .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* reutiliza estilos de cards da listagem */
+.related .product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.related .product-image {
+  background: linear-gradient(126deg, #95e1d3 0%, #5b9bd5 100%);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.related .product-image span {
+  font-size: 3rem;
+}
+
+.related .product-body {
+  padding: 20px;
+}
+
+.related .product-body h3 {
+  font-family: 'Poppins', system-ui;
+  font-size: 1.02rem;
+  color: #495057;
+}
+
+.related .product-body .producer {
+  font-size: 0.85rem;
+  color: #adb5bd;
+}
+
+.related .product-footer {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.related .product-footer .price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff6b6b;
+}
+
+.related .product-footer .add-btn {
+  width: 36px;
+  height: 30px;
+  border-radius: 999px;
+  border: none;
+  background: #4ecdc4;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}

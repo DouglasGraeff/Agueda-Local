@@ -1,0 +1,69 @@
+.page {
+  background: #f8f9fa;
+  padding: 48px 16px 96px;
+}
+
+.page-inner.producers-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header h1 {
+  font-family: 'Poppins', system-ui;
+  font-size: 32px;
+  color: #ff6b6b;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  font-family: 'Inter', system-ui;
+  font-size: 15px;
+  color: #495057;
+  margin-bottom: 24px;
+}
+
+.producers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.producer-card {
+  padding: 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.producer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.producer-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #ffe66d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.producer-card h2 {
+  font-family: 'Poppins', system-ui;
+  font-size: 18px;
+  color: #495057;
+  margin-bottom: 4px;
+}
+
+.producer-card p {
+  font-family: 'Inter', system-ui;
+  font-size: 14px;
+  color: #495057;
+}

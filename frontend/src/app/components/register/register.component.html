@@ -1,0 +1,98 @@
+<div class="register-page">
+  <div class="register-card">
+    <div class="register-hero">
+      <div class="register-hero-logo">Águeda Local</div>
+      <h2 class="register-hero-title">Bem-vindo à Águeda Local!</h2>
+      <p class="register-hero-text">
+        Junte-se à nossa comunidade vibrante de produtores e consumidores locais.
+        Descubra produtos frescos e artesanais da sua região.
+      </p>
+    </div>
+
+    <div class="register-form-panel">
+      <header>
+        <h1 class="register-title">Criar Conta</h1>
+        <p class="register-subtitle">
+          Preencha os seus dados para começar
+        </p>
+      </header>
+
+      <section class="account-type-toggle">
+        <button type="button" class="account-type-card active">
+          <span class="account-type-label">Consumidor</span>
+          <span class="account-type-description">
+            Comprar produtos locais
+          </span>
+        </button>
+        <button type="button" class="account-type-card">
+          <span class="account-type-label">Produtor</span>
+          <span class="account-type-description">
+            Vender os meus produtos
+          </span>
+        </button>
+      </section>
+
+      <form class="register-form">
+        <div class="form-group">
+          <label for="fullName">Nome Completo *</label>
+          <input id="fullName" type="text" class="form-control" placeholder="João Silva" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input id="email" type="email" class="form-control" placeholder="joao.silva@email.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Telefone</label>
+          <input id="phone" type="tel" class="form-control" placeholder="+351 912 345 678" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Palavra-passe *</label>
+            <input id="password" type="password" class="form-control" placeholder="Mínimo 8 caracteres" />
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirmar Palavra-passe *</label>
+            <input id="confirmPassword" type="password" class="form-control" placeholder="Repita a palavra-passe" />
+          </div>
+        </div>
+
+        <label class="form-checkbox">
+          <input type="checkbox" />
+          <span>
+            Aceito os
+            <a href="#">Termos e Condições</a>
+            e a
+            <a href="#">Política de Privacidade</a>
+          </span>
+        </label>
+
+        <label class="form-checkbox">
+          <input type="checkbox" checked />
+          <span>Quero receber novidades e ofertas especiais por email</span>
+        </label>
+
+        <div class="register-actions">
+          <button type="submit" class="btn-primary">Criar Conta</button>
+          <p class="register-helper">ou registe-se com</p>
+
+          <button type="button" class="btn-social">
+            <span class="icon">G</span>
+            <span>Continuar com Google</span>
+          </button>
+          <button type="button" class="btn-social">
+            <span class="icon">f</span>
+            <span>Continuar com Facebook</span>
+          </button>
+
+          <p class="register-login-link">
+            Já tem uma conta?
+            <a routerLink="/login">Entrar</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

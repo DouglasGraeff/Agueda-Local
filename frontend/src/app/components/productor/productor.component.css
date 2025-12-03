@@ -1,0 +1,197 @@
+.page {
+  background: #f8f9fa;
+  padding: 48px 16px 96px;
+}
+
+.page-inner.producer-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* hero */
+
+.producer-hero {
+  display: flex;
+  gap: 32px;
+  padding: 32px 40px;
+  border-radius: 24px;
+  background: linear-gradient(109deg, #95e1d3 0%, #4ecdc4 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 900px) {
+  .producer-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.producer-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.producer-icon span {
+  font-size: 3.5rem;
+}
+
+.producer-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.producer-info h1 {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 2rem;
+}
+
+.producer-info p {
+  font-size: 0.96rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+.producer-header-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.rating-chip {
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.rating-chip .stars {
+  color: #ffe66d;
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-card .icon {
+  font-size: 1.2rem;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.stat-card span {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* produtos */
+
+.producer-products h2 {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 1.4rem;
+  color: #ff6b6b;
+  margin-bottom: 24px;
+}
+
+.producer-products .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.producer-products .product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.producer-products .product-image {
+  background: linear-gradient(126deg, #95e1d3 0%, #5b9bd5 100%);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.producer-products .product-image span {
+  font-size: 3.5rem;
+}
+
+.producer-products .product-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.producer-products .product-body h3 {
+  font-family: 'Poppins', system-ui;
+  font-size: 1.05rem;
+  color: #495057;
+}
+
+.producer-products .product-body .producer {
+  font-size: 0.85rem;
+  color: #adb5bd;
+}
+
+.producer-products .product-footer {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.producer-products .product-footer .price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff6b6b;
+}
+
+.producer-products .product-footer .add-btn {
+  width: 40px;
+  height: 32px;
+  border-radius: 999px;
+  border: none;
+  background: #4ecdc4;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}

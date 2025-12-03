@@ -1,25 +1,69 @@
-<footer class="footer" aria-label="Rodapé do website">
-  <div class="container">
-    <div class="footer-grid">
-      <div *ngFor="let section of footerLinks" class="footer-column">
-        <h4>{{ section.title }}</h4>
-        <ul>
-          <li *ngFor="let link of section.links">
-            <a [href]="link.startsWith('http') ? link : '#'" [attr.aria-label]="link">{{ link }}</a>
-          </li>
-        </ul>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <!-- Coluna da marca -->
+    <div class="footer-brand">
+      <a routerLink="/" class="footer-logo">
+        <span class="logo-icon">☂</span>
+        <span class="logo-text">Águeda Local</span>
+      </a>
+
+      <p class="footer-description">
+        O melhor dos produtores locais de Águeda, diretamente para a sua mesa.
+        Produtos frescos, sustentáveis e de proximidade.
+      </p>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="Email">@</a>
       </div>
     </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; {{ currentYear }} Águeda Local. Todos os direitos reservados.</p>
-      <div class="social-links">
-        <a *ngFor="let social of socialLinks" 
-           [href]="social.url" 
-           [attr.aria-label]="social.name"
-           class="social-link">
-          {{ social.icon }}
+
+    <!-- Colunas de links -->
+    <div class="footer-columns">
+      <div class="footer-column" *ngFor="let section of footerLinks">
+        <h3 class="footer-title">{{ section.title }}</h3>
+        <a
+          *ngFor="let link of section.links"
+          class="footer-link"
+          [routerLink]="link.url"
+        >
+          {{ link.label }}
         </a>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-column newsletter">
+        <h3 class="footer-title">Receba novidades</h3>
+        <p class="newsletter-text">
+          Promoções, novos produtores e eventos especiais em Águeda.
+        </p>
+        <form class="newsletter-form">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="O seu email"
+          />
+          <button type="submit" class="newsletter-button">
+            Subscrever
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p class="footer-copy">
+        © {{ currentYear }} Águeda Local. Todos os direitos reservados.
+      </p>
+
+      <div class="footer-bottom-links">
+        <a routerLink="/terms">Termos</a>
+        <span>•</span>
+        <a routerLink="/privacy">Privacidade</a>
+        <span>•</span>
+        <a routerLink="/cookies">Cookies</a>
       </div>
     </div>
   </div>

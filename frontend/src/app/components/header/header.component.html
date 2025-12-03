@@ -1,0 +1,71 @@
+<header class="main-header">
+  <div class="header-inner">
+
+    <!-- Logo -->
+    <a class="header-logo" routerLink="/">
+      <span class="logo-icon">☂</span>
+      <span class="logo-text">Águeda Local</span>
+    </a>
+
+    <!-- Pesquisa -->
+    <div class="header-search">
+      <span class="search-icon">🔍</span>
+      <input
+        class="search-input"
+        type="text"
+        placeholder="Procurar produtos, produtor"
+      />
+    </div>
+
+    <!-- Navegação -->
+    <nav class="header-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Início
+      </a>
+      <a routerLink="/products" routerLinkActive="active">
+        Produtos
+      </a>
+      <a routerLink="/producers" routerLinkActive="active">
+        Produtores
+      </a>
+      <a routerLink="/about" routerLinkActive="active">
+        Sobre
+      </a>
+      <a routerLink="/login" routerLinkActive="active">
+        Entrar
+      </a>
+
+      <a routerLink="/cart" class="cart-link" routerLinkActive="active">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-badge">{{ cartCount }}</span>
+      </a>
+    </nav>
+
+    <!-- Botão menu mobile -->
+    <button class="header-menu-toggle" type="button" (click)="toggleMobileNav()">
+      ☰
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <nav class="header-nav-mobile" [class.open]="isMobileNavOpen">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Início
+    </a>
+    <a routerLink="/products" routerLinkActive="active">
+      Produtos
+    </a>
+    <a routerLink="/producers" routerLinkActive="active">
+      Produtores
+    </a>
+    <a routerLink="/about" routerLinkActive="active">
+      Sobre
+    </a>
+    <a routerLink="/login" routerLinkActive="active">
+      Entrar
+    </a>
+    <a routerLink="/cart" routerLinkActive="active" class="cart-mobile">
+      🛒 Carrinho
+    </a>
+  </nav>
+</header>

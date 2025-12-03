@@ -1,0 +1,420 @@
+:host {
+  display: block;
+}
+
+/* Fundo geral escuro como no Figma */
+.login-screen {
+  min-height: 100vh;
+  background: #444444;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Frame interior claro (onde está header, card, footer) */
+.login-frame {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 120px 16px 80px;
+  background: #f8f9fa;
+}
+
+/* Card principal (Main) */
+.login-main {
+  max-width: 1000px;
+  width: 100%;
+  min-height: 640px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  overflow: hidden;
+}
+
+/* ========================= */
+/* Lado esquerdo (gradiente) */
+/* ========================= */
+
+.login-hero {
+  position: relative;
+  padding: 48px;
+  background: linear-gradient(
+    153.43deg,
+    #ff6b6b 0%,
+    #ffa07a 25%,
+    #ffe66d 50%,
+    #4ecdc4 75%,
+    #5b9bd5 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* content centrado */
+.login-hero-content {
+  max-width: 400px;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-hero-title {
+  margin: 0 0 16px;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+}
+
+.login-hero-text {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+/* Umbrelas decorativas (☂) em posições aproximadas ao Figma */
+.login-hero-umbrellas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.umbrella {
+  position: absolute;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 96px;
+  line-height: 1;
+  color: #212529;
+  opacity: 0.2;
+}
+
+.umbrella-1 {
+  left: 50px;
+  top: 110px;
+}
+
+.umbrella-2 {
+  right: 75px;
+  top: 190px;
+}
+
+.umbrella-3 {
+  left: 75px;
+  bottom: 190px;
+}
+
+.umbrella-4 {
+  right: 50px;
+  bottom: 280px;
+}
+
+.umbrella-5 {
+  left: 25px;
+  bottom: 120px;
+}
+
+.umbrella-6 {
+  right: 25px;
+  bottom: 80px;
+}
+
+/* ========================= */
+/* Lado direito (form)       */
+/* ========================= */
+
+.login-panel {
+  padding: 104px 48px 104px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 500px;
+  justify-self: center;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-title {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #ff6b6b;
+}
+
+.login-subtitle {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: #adb5bd;
+}
+
+/* Botões sociais */
+
+.login-social {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.btn-social {
+  box-sizing: border-box;
+  width: 100%;
+  height: 61px;
+  padding: 18px 24px;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.btn-social-icon {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.btn-social-text {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Divider "ou" */
+
+.login-divider {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 8px;
+}
+
+.divider-line {
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background: #e9ecef;
+  width: calc(50% - 30px);
+}
+
+.divider-line:first-of-type {
+  left: 0;
+}
+
+.divider-line:last-of-type {
+  right: 0;
+}
+
+.divider-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: #adb5bd;
+}
+
+/* Formulário */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  padding-top: 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #495057;
+}
+
+.form-input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  background: #ffffff;
+}
+
+.form-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 15px;
+  color: #757575;
+}
+
+.form-input::placeholder {
+  color: #757575;
+}
+
+/* Lembrar-me */
+
+.form-row-remember {
+  margin-top: 4px;
+}
+
+.remember-checkbox {
+  position: relative;
+  padding-left: 24px;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: #212529;
+}
+
+.remember-checkbox input {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 13px;
+  height: 13px;
+  border-radius: 2.5px;
+}
+
+/* Botão principal */
+
+.btn-primary {
+  margin-top: 8px;
+  width: 100%;
+  height: 71px;
+  border-radius: 9999px;
+  border: none;
+  background: #ffe66d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #212529;
+  cursor: pointer;
+}
+
+/* Links inferiores */
+
+.login-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.link-forgot {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #4ecdc4;
+  text-decoration: none;
+}
+
+.link-forgot:hover {
+  text-decoration: underline;
+}
+
+.login-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.register-text {
+  color: #adb5bd;
+}
+
+.register-link {
+  font-weight: 600;
+  color: #4ecdc4;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+
+@media (max-width: 1024px) {
+  .login-frame {
+    padding: 100px 16px 64px;
+  }
+
+  .login-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .login-panel {
+    padding: 40px 32px 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .login-frame {
+    padding: 80px 12px 48px;
+  }
+
+  .login-panel {
+    padding: 28px 20px 36px;
+  }
+
+  .login-hero {
+    padding: 40px 24px;
+  }
+
+  .login-hero-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .login-hero-text {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .login-social {
+    margin-top: 24px;
+  }
+}

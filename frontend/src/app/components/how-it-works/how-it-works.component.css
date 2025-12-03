@@ -1,0 +1,81 @@
+.page {
+  background: #f8f9fa;
+  padding: 48px 16px 96px;
+}
+
+.page-inner.hiw-page {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.page-header h1 {
+  font-family: 'Poppins', system-ui;
+  font-size: 32px;
+  color: #ff6b6b;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  font-family: 'Inter', system-ui;
+  font-size: 15px;
+  color: #495057;
+}
+
+.hiw-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 720px) {
+  .hiw-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.hiw-card {
+  padding: 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.hiw-card h2 {
+  font-family: 'Poppins', system-ui;
+  font-size: 20px;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.hiw-card ol {
+  padding-left: 18px;
+}
+
+.hiw-card li {
+  font-family: 'Inter', system-ui;
+  font-size: 14px;
+  color: #495057;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+.hiw-info h2 {
+  font-family: 'Poppins', system-ui;
+  font-size: 20px;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.hiw-info ul {
+  padding-left: 18px;
+}
+
+.hiw-info li {
+  font-family: 'Inter', system-ui;
+  font-size: 14px;
+  color: #495057;
+  line-height: 1.7;
+}

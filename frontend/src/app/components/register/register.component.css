@@ -1,0 +1,258 @@
+.auth-placeholder {}
+
+/* Use directly in component */
+.register-page {
+  min-height: calc(100vh - 160px);
+  padding: 140px 16px 80px;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-card {
+  max-width: 1000px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .register-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* painel colorido */
+
+.register-hero {
+  position: relative;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(
+    162deg,
+    #ff6b6b 0%,
+    #ffa07a 25%,
+    #ffe66d 50%,
+    #4ecdc4 75%,
+    #5b9bd5 100%
+  );
+  color: #ffffff;
+}
+
+.register-hero-title {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 2.1rem;
+  margin-bottom: 16px;
+}
+
+.register-hero-text {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 320px;
+}
+
+/* formulário */
+
+.register-form-panel {
+  padding: 40px 48px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.register-title {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 2rem;
+  color: #ff6b6b;
+  margin-bottom: 4px;
+}
+
+.register-subtitle {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  color: #adb5bd;
+}
+
+/* tipo de conta */
+
+.account-type-toggle {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.account-type-card {
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  padding: 24px 20px;
+  text-align: left;
+  cursor: pointer;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.account-type-card.active {
+  background: rgba(78, 205, 196, 0.05);
+  border-color: #4ecdc4;
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+}
+
+.account-type-label {
+  font-weight: 600;
+  color: #495057;
+}
+
+.account-type-description {
+  font-size: 0.8rem;
+  color: #adb5bd;
+}
+
+/* inputs */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #495057;
+  font-family: 'Inter', system-ui;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  font-family: 'Inter', system-ui;
+}
+
+/* checkboxes */
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #495057;
+  font-family: 'Inter', system-ui;
+}
+
+.form-checkbox input {
+  margin-top: 4px;
+}
+
+.form-checkbox a {
+  color: #4ecdc4;
+  text-decoration: underline;
+}
+
+/* botões */
+
+.register-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  border-radius: 999px;
+  padding: 18px 32px;
+  border: none;
+  background: #ffe66d;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.register-helper {
+  font-size: 0.9rem;
+  color: #adb5bd;
+  text-align: center;
+  font-family: 'Inter', system-ui;
+}
+
+.btn-social {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  background: #ffffff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: 'Inter', system-ui;
+}
+
+.btn-social .icon {
+  font-weight: 700;
+}
+
+.register-login-link {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #adb5bd;
+  text-align: center;
+  font-family: 'Inter', system-ui;
+}
+
+.register-login-link a {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+  .register-form-panel {
+    padding: 32px 20px 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .register-page {
+    padding: 120px 12px 48px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
